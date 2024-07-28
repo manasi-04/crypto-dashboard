@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+html, body {
+  height: 100%;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#root {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  height: 100%;
+}
+
+.pagination {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  list-style-type: none;
+  margin: 1em 0;
 }
 
-.App-link {
-  color: #61dafb;
+.pg-page{
+  margin: 0 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pg-link{
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f0f0f0;
+  text-decoration: none;
+  color: #008080; /* blue */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.page-link:hover {
+  background-color: #ddd;
+}
+
+.pg-page.active .pg-link {
+  background-color: #008080;
+  color: #fff;
+  border-color: #008080;
+}
+
+.pg-page.disabled .pg-link {
+  background-color: #e0e0e0;
+  color: grey;
+  cursor: not-allowed;
+}
+
+.cell-click {
+  cursor: pointer;
 }

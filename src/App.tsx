@@ -1,25 +1,16 @@
-import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import CryptoTablePage from './pages/crypto-table/CryptoTable';
+import CryptoDetailsPage from './pages/crypto-details/CryptoDetails';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<CryptoTablePage />} />
+        <Route path="/details/:id" element={<CryptoDetailsPage />} />
+      </Routes>
+    </Router>
   );
 }
 
